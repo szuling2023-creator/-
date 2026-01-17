@@ -1,0 +1,234 @@
+:root{
+  --bg:#fbf7f2;
+  --card:#ffffff;
+  --text:#2b2b2b;
+  --muted:#6b6b6b;
+  --line:#e9dfd2;
+  --accent:#c47b5a;
+  --accent2:#7a6a5a;
+  --radius:18px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Microsoft JhengHei", "PingFang TC", Arial;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+
+  /* 防君子：禁止選取（下面會開放部分文字可選） */
+  -webkit-user-select:none;
+  user-select:none;
+}
+a{color:inherit}
+.wrap{max-width:1080px;margin:auto;padding:28px}
+
+.nav{
+  display:flex;gap:18px;align-items:center;justify-content:space-between;
+  position:sticky;top:0;
+  background:rgba(251,247,242,.92); /* fallback */
+  border-bottom:1px solid var(--line);padding:14px 22px;z-index:10;
+}
+/* backdrop-filter 支援才會套用 */
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .nav{
+    background:rgba(251,247,242,.85);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.brand{font-weight:900;letter-spacing:.4px}
+.navlinks a{color:var(--accent2);text-decoration:none;margin-left:14px;font-weight:900}
+
+.hero{
+  padding:50px 0 18px;
+  display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;
+}
+.pill{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--accent2);background:#fff}
+h1{font-size:40px;line-height:1.2;margin:14px 0 10px}
+p{margin:10px 0;color:var(--muted)}
+.small{font-size:14px}
+.note{margin-top:10px}
+
+.btns{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.btn{
+  display:inline-block;text-decoration:none;padding:12px 16px;border-radius:999px;
+  border:1px solid var(--line);background:#fff;font-weight:900;
+}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.section{padding:26px 0}
+.section h2{margin:0 0 12px;font-size:22px}
+.kicker{color:var(--accent2);font-weight:900;margin-bottom:6px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.email{font-size:18px;margin:0}
+
+/* 允許部分文字可選（避免你想複製 Email 時卡住） */
+.section p, .section li, .section h2, .hero p, .hero h1, .brand, .navlinks a, .email{
+  -webkit-user-select:text;
+  user-select:text;
+}
+
+/* ===== 展示圖：浮水印＋防拖拉另存（防君子）===== */
+.thumb{
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+
+/* 用 aspect-ratio + fallback（更穩） */
+.thumb-wrap{
+  position:relative;
+  width:100%;
+  border-radius:14px;
+  border:1px solid var(--line);
+  overflow:hidden;
+  background:#fff;
+}
+
+/* 支援 aspect-ratio 的瀏覽器 */
+@supports (aspect-ratio: 4 / 3) {
+  .thumb-wrap{ aspect-ratio: 4 / 3; }
+}
+
+/* 不支援 aspect-ratio 的 fallback：用 padding 撐 4:3 */
+@supports not (aspect-ratio: 4 / 3) {
+  .thumb-wrap::before{
+    content:"";
+    display:block;
+    padding-top:75%; /* 3/4 = 75% */
+  }
+  .thumb-wrap img.thumb{
+    position:absolute;left:0;top:0;
+  }
+}
+
+.thumb-wrap img.thumb{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border:0;
+  border-radius:0;
+}
+
+.thumb-wrap::after{
+  content: attr(data-wm);
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%) rotate(-18deg);
+  font-weight:900;
+  letter-spacing:1px;
+  font-size:20px;
+  color: rgba(122, 106, 90, 0.22);
+  padding:8px 14px;
+  border:1px solid rgba(233, 223, 210, 0.55);
+  border-radius:999px;
+  background: rgba(251, 247, 242, 0.35);
+  pointer-events:none;
+}
+
+/* ===== 分類橫向滑動作品區 ===== */
+.work-section{margin-bottom:32px}
+.work-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:0 0 10px;
+}
+.work-title{
+  font-size:18px;
+  font-weight:900;
+  margin:0;
+  color:var(--text);
+}
+.work-count{
+  font-size:13px;
+  font-weight:900;
+  color:var(--accent2);
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:6px 10px;
+}
+
+.work-scroll{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding-bottom:6px;
+  scroll-snap-type:x mandatory;
+}
+.work-scroll::-webkit-scrollbar{height:6px}
+.work-scroll::-webkit-scrollbar-thumb{
+  background:var(--line);
+  border-radius:999px;
+}
+
+.work-card{
+  min-width:240px;
+  scroll-snap-align:start;
+  flex-shrink:0;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:12px;
+}
+.work-card p{
+  margin:8px 0 0;
+  text-align:center;
+  color:var(--text);
+}
+
+.footer{padding:28px 0 12px;text-align:center;color:#8a7b6c;font-size:14px}
+
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  h1{font-size:34px}
+  .work-card{min-width:210px}
+}
+/* ===== 燈箱放大預覽（不提供下載） ===== */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.hidden{
+  display: none;
+}
+
+.lightbox-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+}
+
+.lightbox-content{
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  background: #fff;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  z-index: 1;
+}
+
+.lightbox-content img{
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+
+  /* 防君子 */
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
