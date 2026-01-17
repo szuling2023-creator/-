@@ -1,0 +1,70 @@
+{
+  "site": {
+    "name": "琳創ＳＴＵＤＩＯ",
+    "title": "平面Ｘ影音｜作品集",
+    "tagline": "用質感一致的視覺，讓品牌更好被牢記",
+    "intro": "提供各項設計服務：Banner、傳單、社群圖、包裝、Logo、展示架...等",
+    "email": "szuling2023@gmail.com"
+  },
+  "services": [
+    {
+      "name": "平面設計",
+      "items": [
+        "Banner",
+        "傳單",
+        "文宣/社群圖",
+        "一頁式",
+        "包裝",
+        "Logo 設計",
+        "展示架設計"
+      ]
+    },
+    {
+      "name": "影音剪輯",
+      "items": [
+        "短影音（Reels / Shorts / TikTok）",
+        "橫式影片（YouTube / 品牌形象）",
+        "字幕製作",
+        "節奏剪輯與封面設計"
+      ]
+    }
+  ],
+  "works": [
+  { "category": "Banner", "title": "Banner｜01", "thumb": "assets/img/作品＿BN1.jpg" },
+  { "category": "Banner", "title": "Banner｜02", "thumb": "assets/img/作品＿BN2.jpg" },
+  { "category": "Banner", "title": "Banner｜03", "thumb": "assets/img/作品＿BN3.jpg" },
+  { "category": "Banner", "title": "Banner｜04", "thumb": "assets/img/作品＿BN4.jpg" },
+  { "category": "Banner", "title": "Banner｜05", "thumb": "assets/img/作品＿BN5.jpg" },
+  { "category": "Banner", "title": "Banner｜06", "thumb": "assets/img/作品＿BN6.jpg" },
+
+  { "category": "傳單", "title": "傳單｜01", "thumb": "assets/img/作品＿墊板海報系列1.jpg" },
+  { "category": "傳單", "title": "傳單｜02", "thumb": "assets/img/作品＿墊板海報系列2.jpg" },
+
+  { "category": "文宣/社群圖", "title": "社群圖｜01", "thumb": "assets/img/作品＿社群圖1.jpg" },
+  { "category": "文宣/社群圖", "title": "社群圖｜02", "thumb": "assets/img/作品＿社群圖2.jpg" },
+  { "category": "文宣/社群圖", "title": "社群圖｜03", "thumb": "assets/img/作品＿社群圖3.jpg" },
+
+  { "category": "一頁式", "title": "一頁式｜01", "thumb": "assets/img/作品＿一頁式1.webp"},
+  { "category": "一頁式", "title": "一頁式｜02", "thumb": "assets/img/作品＿一頁式2.webp" },
+  { "category": "一頁式", "title": "一頁式｜03", "thumb": "assets/img/作品＿一頁式3.webp" },
+  { "category": "一頁式", "title": "一頁式｜04", "thumb": "assets/img/作品＿一頁式4.webp" },
+  { "category": "一頁式", "title": "一頁式｜05", "thumb": "assets/img/作品＿一頁式5.webp" },
+
+  { "category": "縮圖設計", "title": "縮圖｜01", "thumb": "assets/img/作品＿ＹＴ縮圖2.jpg" },
+  { "category": "縮圖設計", "title": "縮圖｜02", "thumb": "assets/img/作品＿ＹＴ縮圖2.jpg" },
+  { "category": "縮圖設計", "title": "縮圖｜03", "thumb": "assets/img/作品＿ＹＴ縮圖3.jpg" },
+
+  { "category": "Logo 設計", "title": "Logo｜", "thumb": "assets/LOGO.webp" },
+
+  { "category": "展示架設計", "title": "展示架｜01", "thumb": "assets/img/作品＿立牌展架設計1.jpg" },
+  { "category": "展示架設計", "title": "展示架｜02", "thumb": "assets/img/作品＿立牌展架設計2.jpg" },
+  { "category": "展示架設計", "title": "展示架｜03", "thumb": "assets/img/作品＿立牌展架設計3.jpg" },
+  { "category": "展示架設計", "title": "展示架｜04", "thumb": "assets/img/作品＿立牌展架設計4.jpg" },
+  { "category": "展示架設計", "title": "展示架｜05", "thumb": "assets/img/作品＿立牌展架設計5.jpg" },
+  { "category": "展示架設計", "title": "展示架｜06", "thumb": "assets/img/作品＿立牌展架設計6.jpg" },
+  { "category": "展示架設計", "title": "展示架｜07", "thumb": "assets/img/作品＿立牌展架設計7.jpg" }
+  ],
+  "about": {
+    "text": " 從小擁有很多創意靈感的我，喜愛發想靈感總有很多古靈精怪的意見，可當時上高中一直期望自己能夠讀影視科，自己在當時覺得每一齣戲都是一個作品，更是一個任何人都無法替代的角色，也因家人的反對之下覺得出路太狹窄，而最終選擇讀多媒體設計，每天的反覆練習畫畫、設計作品，慢慢熟能生巧的自己，也開始覺得設計對我來說很重要，是我一點一滴從零累積的過程。"
+  }
+}

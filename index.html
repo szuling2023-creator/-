@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <meta name="description" content="平面設計 × 影音剪輯作品集｜溫暖質感｜合作洽談請來信" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<!-- 燈箱預覽（Lightbox） -->
+<div id="lightbox" class="lightbox hidden">
+  <div class="lightbox-backdrop"></div>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="preview">
+  </div>
+</div>
+<body>
+
+  <!-- 導覽列 -->
+  <header class="nav">
+    <div class="brand" id="brand">Portfolio</div>
+    <nav class="navlinks">
+      <a href="#services">服務</a>
+      <a href="#works">作品</a>
+      <a href="#process">流程</a>
+      <a href="#about">關於</a>
+      <a href="#contact">聯絡</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- 首屏 Hero -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="pill" id="siteTitle">平面設計 × 影音剪輯｜作品集</div>
+        <h1 id="tagline">用溫柔一致的視覺，讓你的品牌更好被記住</h1>
+        <p id="intro">我提供平面設計與短影音剪輯，協助品牌把內容做得更有質感、更有辨識度，也更好轉換。</p>
+
+        <div class="btns">
+          <a class="btn primary" href="#works">看作品</a>
+          <a class="btn" id="emailBtn" href="#">Email 合作洽談</a>
+        </div>
+
+      </div>
+
+      <aside class="card hero-right">
+        <div class="kicker">你可以找我做</div>
+        <ul class="small" id="servicesQuick"></ul>
+      </aside>
+    </section>
+
+    <!-- 服務 -->
+    <section id="services" class="section">
+      <h2>服務項目</h2>
+      <div class="two" id="servicesList"></div>
+    </section>
+
+    <!-- 作品（改成：分類 → 橫向滑動） -->
+    <section id="works" class="section">
+      <h2>精選作品</h2>
+
+      <!-- 由 JS 依分類自動產生 -->
+      <div id="worksByCategory"></div>
+    </section>
+
+    <!-- 合作流程 -->
+    <section id="process" class="section">
+      <h2>合作流程</h2>
+      <div class="card">
+        <ol class="small">
+          <li><b>需求確認</b>：用途、風格參考、交付尺寸與期限</li>
+          <li><b>方向提案</b>：版面/視覺方向或剪輯節奏方向（可選）</li>
+          <li><b>製作交付</b>：初稿 → 調整 → 完稿</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 關於 -->
+    <section id="about" class="section">
+      <h2>關於我</h2>
+      <div class="card">
+        <p class="small" id="aboutText"></p>
+      </div>
+    </section>
+
+    <!-- 聯絡 -->
+    <section id="contact" class="section">
+      <h2>合作聯繫</h2>
+      <div class="card">
+        <p class="small">想合作或詢問報價，歡迎直接聯繫：</p>
+        <p class="email" id="emailText"><b>GMAIL:szuling2023@gmail.com</b></p>
+        <p class="email" id="emailText"><b>LINE官方:＠960xdowu</b></p>       
+        <p class="small">建議附上：需求 / 預算區間 / 期限 / 參考風格</p>
+        <a class="btn primary" id="emailBtn2" href="#">寫信給我</a>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">©</footer>
+  </main>
+
+  <script src="assets/script.js" defer></script>
+
+  <!-- 防君子：停右鍵、停拖拉（只針對作品區） -->
+  <script>
+    document.addEventListener("contextmenu", (e) => {
+      const inWorks = e.target.closest && e.target.closest("#works");
+      if (inWorks) e.preventDefault();
+    });
+
+    document.addEventListener("dragstart", (e) => {
+      const inWorks = e.target.closest && e.target.closest("#works");
+      if (inWorks) e.preventDefault();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      const key = (e.key || "").toLowerCase();
+      const ctrl = e.ctrlKey || e.metaKey;
+      if (ctrl && (key === "s" || key === "p")) e.preventDefault();
+    });
+  </script>
+</body>
+</html>
